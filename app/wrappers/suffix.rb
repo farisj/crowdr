@@ -330,7 +330,7 @@ class Suffix
       pine: "pne",
       pines: "pnes",
       pnes: "pnes",
-      pl: "pl",
+      place: "pl",
       plain: "pln",
       pln: "pln",
       plains: "plns",

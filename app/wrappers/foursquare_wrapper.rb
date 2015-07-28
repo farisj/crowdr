@@ -7,13 +7,19 @@ class FoursquareWrapper
      def index
          @results_hash = CLIENT.explore_venues(:ll => '40.704628,-74.014155', :query => 'pizza')
          @results = @results_hash['groups'][0]['items'].collect do |item| 
-             {
-                  key:        item['venue']['name'].strip.gsub(/\W/,"").downcase,
-                 name:         item['venue']['name'],
-                 address:     format_address("#{item['venue']['location']['address']}, #{item['venue']['location']['city']}, #{item['venue']['location']['state']} #{item['venue']['location']['postalCode']}"), 
-                 rating:     item['venue']['rating']
-             }
+             if format_key_address("#{item['venue']['location']['address']}, #{item['venue']['location']['city']}, #{item['venue']['location']['state']} #{item['venue']['location']['postalCode']}")
+
+               {
+                    key:        format_key_address("#{item['venue']['location']['address']}, #{item['venue']['location']['city']}, #{item['venue']['location']['state']} #{item['venue']['location']['postalCode']}"),
+                   name:         item['venue']['name'],
+                   address:     "#{item['venue']['location']['address']}, #{item['venue']['location']['city']}, #{item['venue']['location']['state']} #{item['venue']['location']['postalCode']}", 
+                   rating:     item['venue']['rating']
+               }
+             else
+              nil
+            end
          end
+         @results.compact
    end
 
 end

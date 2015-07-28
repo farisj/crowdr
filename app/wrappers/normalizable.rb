@@ -2,7 +2,7 @@ module Normalizable
 
   module InstanceMethods
 
-    def format_address(address)
+    def format_key_address(address)
 
       original = address
       last_word = ""
@@ -14,15 +14,16 @@ module Normalizable
 
         last_word = address.split(",").first.split(" ").last.downcase
 
-      # else
+      else
 
-      #   binding.pry
+        return nil
 
       end
 
       suffixes = Suffix.suffixes
-      if suffixes.include?(last_word)
-        address.gsub(last_word,suffixes[last_word])
+      if suffixes.keys.map{|k|k.to_s}.include?(last_word)
+        # binding.pry
+        address = address.gsub(last_word.capitalize,suffixes[last_word.to_sym])
       end
 
       address

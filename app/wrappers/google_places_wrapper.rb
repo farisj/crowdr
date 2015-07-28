@@ -39,9 +39,9 @@ class GooglePlacesWrapper
         end
 
         {
-          key: result["name"].strip.gsub(/\W/,"").downcase,
+          key: format_key_address(result["formatted_address"].gsub(/,[^,]+$/,"").gsub(/\s#.+/,"")),
           name: result["name"],
-          address: format_address(result["formatted_address"]),#.gsub(/,[^,]+$/,"").gsub(/\s#.+/,""),
+          address: result["formatted_address"].gsub(/,[^,]+$/,"").gsub(/\s#.+/,""),
           rating: result["rating"]
         }
 
