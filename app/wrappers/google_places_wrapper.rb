@@ -1,5 +1,7 @@
 class GooglePlacesWrapper
 
+  include Normalizable::InstanceMethods
+
   GOOGLE_API_KEY = ENV['google_places_api_key']
 
   def initialize(params = {})
@@ -15,7 +17,7 @@ class GooglePlacesWrapper
       lat = 40.704628
       lon = -74.014155
 
-      radius = 5000 #in meters
+      radius = 1000 #in meters
 
       #Build API query (Multi-line for readability)
       url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
@@ -32,10 +34,15 @@ class GooglePlacesWrapper
       #Format data
       results["results"].map do |result|
 
+        if result["name"]=="Davinci"
+          # binding.pry
+        end
+
         {
+          key: result["name"].strip.gsub(/\W/,"").downcase,
           name: result["name"],
-          address: result["formatted_address"].gsub(/,[^,]+$/,""),
-          google_rating: result["rating"]
+          address: format_address(result["formatted_address"]),#.gsub(/,[^,]+$/,"").gsub(/\s#.+/,""),
+          rating: result["rating"]
         }
 
       end

@@ -1,5 +1,7 @@
 class YelpWrapper
 
+  include Normalizable::InstanceMethods
+
   attr_accessor :yelp_results
 
   def yelp_client
@@ -14,6 +16,7 @@ class YelpWrapper
     #Search yelp
     def yelp_search
       params = {
+        term: 'pizza',
         limit: 10,
         sort: 2,
         radius_filter: 1000,
@@ -26,11 +29,11 @@ class YelpWrapper
       #Search yelp and return hash of restaurant values.
       yelp_client.search_by_coordinates(coordinates, params, { lang: 'en' }).businesses.collect do |business|
         @yelp_results= {
+
+          key: business.name.strip.gsub(/\W/,"").downcase,
           name: business.name, 
-          yelp_rating: business.rating,
-          image_url: business.snippet_image_url,
-          categories: business.categories,
-          location: "#{business.location.display_address.first}, #{business.location.display_address.last}"
+          rating: business.rating,
+          address: format_address("#{business.location.display_address.first}, #{business.location.display_address.last}")#.gsub(/\s#.+/,"")
         }
       end
   end
