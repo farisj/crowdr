@@ -22,7 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 gem 'yelp'
-
+gem 'foursquare2'
 gem 'figaro'
 
 
