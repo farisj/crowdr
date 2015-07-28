@@ -17,7 +17,7 @@ class YelpWrapper
     def yelp_search
       params = {
         term: 'pizza',
-        limit: 10,
+        limit: 20,
         sort: 2,
         radius_filter: 1000,
         category_filter: 'restaurants'

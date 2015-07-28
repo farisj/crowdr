@@ -6,7 +6,7 @@ module Normalizable
 
       original = address
       last_word = ""
-      address = address.gsub(/,[^,]+$/,"").gsub(/\s#.+/,"")
+      address = address.gsub(/,[^,]+$/,"").gsub(/\s# ?\d+,/,",")
 
 
       # binding.pry
