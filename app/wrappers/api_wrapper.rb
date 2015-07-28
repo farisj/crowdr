@@ -42,7 +42,12 @@ class ApiWrapper
   def generate_restaurants(g,f,y)
     
     #magic
-    
+
+    #combine foursquare yelp
+
+
+    #combine f-y google
+
 
 
     #return [restaurant, restaurant2.....]

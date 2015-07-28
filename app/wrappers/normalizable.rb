@@ -26,7 +26,7 @@ module Normalizable
         address = address.gsub(last_word.capitalize,suffixes[last_word.to_sym])
       end
 
-      address
+      address.downcase.gsub(" ","")
       
     end
 
