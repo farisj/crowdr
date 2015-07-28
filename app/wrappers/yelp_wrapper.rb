@@ -17,7 +17,7 @@ class YelpWrapper
     def yelp_search
       params = {
         term: 'pizza',
-        limit: 10,
+        limit: 20,
         sort: 2,
         radius_filter: 1000,
         category_filter: 'restaurants'
@@ -30,10 +30,10 @@ class YelpWrapper
       yelp_client.search_by_coordinates(coordinates, params, { lang: 'en' }).businesses.collect do |business|
         @yelp_results= {
 
-          key: business.name.strip.gsub(/\W/,"").downcase,
+          key: format_key_address("#{business.location.display_address.first}, #{business.location.display_address.last}"),
           name: business.name, 
           rating: business.rating,
-          address: format_address("#{business.location.display_address.first}, #{business.location.display_address.last}")#.gsub(/\s#.+/,"")
+          address: "#{business.location.display_address.first}, #{business.location.display_address.last}"#.gsub(/\s#.+/,"")
         }
       end
   end
