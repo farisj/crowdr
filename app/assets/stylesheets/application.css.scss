@@ -34,3 +34,41 @@ body {
 .theme-showcase > p > .btn {
   margin: 5px 0;
 }
+
+.location {
+ background-color: #EEE;
+ border-radius: 5px;
+}
+
+.loc {
+ display: inline-block;
+ background-color: white;
+ border-radius: 5px;
+ margin: 10px;
+ width: 330px;
+ text-align: center;
+}
+
+.latitude {
+ float: right;
+}
+
+#map-canvas {
+ width: 700px;
+ height: 600px;
+ background-color: #EEE;
+ border-radius: 5px;
+}
+
+.vertical-align {
+ padding-top: 160px;
+}
+
+.error-message {
+ width: 100%;
+ background-color: crimson;
+ color: white;
+ border-radius: 5px;
+ text-align: center;
+ margin-bottom: 5px;
+}
