@@ -8,7 +8,8 @@ class SearchController < ApplicationController
   def create
     @search = ApiWrapper.new
     @restaurants = @search.get_data(search_params).values
-    binding.pry
+    # binding.pry
+    render :index
   end
 
 

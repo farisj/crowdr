@@ -7,8 +7,8 @@ class YelpWrapper
   def initialize(params = {query: 'pizza', lt: 40.704628, lg: -74.014155})
 
     @term = params[:query]
-    @lt = params[:lt]
-    @lg = params[:lg]
+    @lt = params[:lt].to_f
+    @lg = params[:lg].to_f
     
   end
 
