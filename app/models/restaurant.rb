@@ -15,8 +15,4 @@ class Restaurant
   #   @@all << self
   # end
 
-  geocoded_by :ip_address,
-  :latitude => :lat, :longitude => :lon
-  after_validation :geocode
-
 end
