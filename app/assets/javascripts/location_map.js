@@ -5,6 +5,7 @@ $(document).ready(function(){
         var longitude = position.coords.longitude.toFixed(2);
 
         insertMap(latitude, longitude);
+        insertHiddens(latitude,longitude);
       });
   }
   var coords =  getLocation();
@@ -35,4 +36,9 @@ function insertMap(latitude, longitude) {
       } else {
         marker.setAnimation(google.maps.Animation.BOUNCE);
       }
+    }
+
+    function insertHiddens(latitude,longitude){
+      $('#search_lt').val(latitude);
+      $('#search_lg').val(longitude);
     }

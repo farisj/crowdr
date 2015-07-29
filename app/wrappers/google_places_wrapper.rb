@@ -28,8 +28,8 @@ class GooglePlacesWrapper
       uri = URI.parse(url)
       system "curl '#{uri}' > google_response"
       results = JSON.parse(File.read("google_response"))
-
-      #Format data
+      # binding.pry
+      # Format data
       results["results"].map { |result|
         if result["rating"]
           {

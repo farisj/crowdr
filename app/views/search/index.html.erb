@@ -21,21 +21,23 @@
         <div class="form-group">
           <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?')%></p>
         </div>
-        <% hidden_field_tag "lt" %> <!-- placeholder -->
-        <% hidden_field_tag "lg" %> <!-- placeholder -->
+        <%= hidden_field_tag "search[lt]" %> <!-- placeholder -->
+        <%= hidden_field_tag "search[lg]" %> <!-- placeholder -->
         <h2><%= submit_tag "GET SEARCHING"%></h2>
       <% end %>
     </div>
     
     <%= render "map" %>
 
-    <table style="width:50%" align="right">
+    <table style="width:50%; float:right;" align="right">
       <td>Restaurant</td>
       <td>Google</td>
       <td>foursquare</td>
       <td>Yelp</td>
-      <%= @restaurants.each do |restaurant| %>
-        <tr><%= render "restaurant" %></tr>
+      <% if @restaurants %>
+        <% @restaurants.each do |restaurant| %>
+          <tr><%= render partial: "restaurant" , locals: {restaurant: restaurant} %></tr>
+        <% end %>
       <% end %>
     </table>
 

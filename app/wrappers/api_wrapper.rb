@@ -1,8 +1,9 @@
 class ApiWrapper
 
-  def get_data
+  def get_data(params = {query: 'chinese', lt: 40.728209, lg: -73.953279})
 
-    params = {query: 'chinese', lt: 40.728209, lg: -73.953279}
+    params[:lt] = params[:lt].to_f
+    params[:lg] = params[:lg].to_f
     g = GooglePlacesWrapper.new(params).search
     y = YelpWrapper.new(params).yelp_search
     f = FoursquareWrapper.new(params).index

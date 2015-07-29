@@ -4,11 +4,11 @@ class YelpWrapper
 
   attr_accessor :yelp_results
 
-  def initialize(params = {term: 'pizza', lt: 40.704628, lg: -74.014155})
+  def initialize(params = {query: 'pizza', lt: 40.704628, lg: -74.014155})
 
-    @term = params[:term]
-    @lt = params[:lt]
-    @lg = params[:lg]
+    @term = params[:query]
+    @lt = params[:lt].to_f
+    @lg = params[:lg].to_f
     
   end
 
