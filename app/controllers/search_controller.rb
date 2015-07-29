@@ -5,7 +5,8 @@ class SearchController < ApplicationController
   end
 
   def create
-    @search = ApiWrapper.new.get_data(search_params)
+    @search = ApiWrapper.new
+    @search.get_data(search_params)
   end
 
 

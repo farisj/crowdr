@@ -19,7 +19,9 @@
         <div class="form-group">
           <%= text_field_tag('search[query]')%>
         </div>
-        <h2><%= submit_tag "GET SEARCHING" %></h2>
+        <% hidden_field_tag "lt" %> <!-- placeholder -->
+        <% hidden_field_tag "lg" %> <!-- placeholder -->
+        <h2><%= submit_tag "GET SEARCHING"%></h2>
       <% end %>
     </div>
   </body>
