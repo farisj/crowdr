@@ -3,30 +3,13 @@ class ApiWrapper
   def get_data
 
     # preliminary 
-    g = GooglePlacesWrapper.new.search
-    y = YelpWrapper.new.yelp_search
-    f = FoursquareWrapper.new.index
 
-    # a = [g,y,f].map do |array|
-    #   array.sort_by do | restaurant_hash | 
+    # 40.728209, -73.953279
+    params = {query: 'chinese', lt: 40.728209, lg: -73.953279}
+    g = GooglePlacesWrapper.new(params).search
+    y = YelpWrapper.new(params).yelp_search
+    f = FoursquareWrapper.new(params).index
 
-    #     restaurant_hash[:name]
-    #   end
-    # end
-
-    # g = a[0]
-    # y = a[1]
-    # f = a[2]
-
-
-    # puts 'google'
-    # puts g
-
-    # puts "yelp"
-    # puts y
-
-    # puts 'foursquare'
-    # puts f
 
     generate_restaurants(g,f,y)
     #Combine magic
@@ -52,7 +35,6 @@ class ApiWrapper
       foursquare.each do |foursquare_hash|
 
         yelp.each do |yelp_hash|
-
           fyg = (foursquare_hash[:key] == yelp_hash[:key] && yelp_hash[:key] == google_hash[:key])
           fy = foursquare_hash[:key] == yelp_hash[:key]
           yg = yelp_hash[:key] == google_hash[:key]
@@ -88,12 +70,13 @@ class ApiWrapper
 
     #combine f-y google
 
-
+    #console display - to be removed
     restaurants.each do |key, restaurant|
 
       puts "#{restaurant.name} - #{restaurant.address} - #{restaurant.google_rating} - #{restaurant.foursquare_rating} - #{restaurant.yelp_rating}"
 
     end
+
     nil
     restaurants
     #return [restaurant, restaurant2.....]
