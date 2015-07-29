@@ -14,11 +14,6 @@ class GooglePlacesWrapper
 
   def search
 
-      #arbitrary search parameters (for now)
-      # query = 'pizza'
-
-      # lat = 40.704628
-      # lon = -74.014155
 
       radius = 1000 #in meters
 
@@ -35,20 +30,16 @@ class GooglePlacesWrapper
       results = JSON.parse(File.read("google_response"))
 
       #Format data
-      results["results"].map do |result|
-
-        if result["name"]=="Davinci"
-          # binding.pry
+      results["results"].map { |result|
+        if result["rating"]
+          {
+            key: format_key_address(result["formatted_address"].gsub(/,[^,]+$/,"")),
+            name: result["name"],
+            address: result["formatted_address"].gsub(/\s#.,+/,","),
+            rating: result["rating"]
+          }
         end
-
-        {
-          key: format_key_address(result["formatted_address"].gsub(/,[^,]+$/,"")),
-          name: result["name"],
-          address: result["formatted_address"].gsub(/\s#.,+/,","),
-          rating: result["rating"]
-        }
-
-      end
+      }.compact
     end
 
 end

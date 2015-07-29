@@ -19,7 +19,7 @@ class FoursquareWrapper
 
       venue_loc = item.venue.location
       full_address = "#{venue_loc.address}, #{venue_loc.city}, #{venue_loc.state} #{venue_loc.postalCode}"
-      if format_key_address(full_address)
+      if format_key_address(full_address) && item.venue.rating
           @results << {
                  key: format_key_address(full_address),
                  name:         item.venue.name,

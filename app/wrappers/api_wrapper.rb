@@ -2,9 +2,6 @@ class ApiWrapper
 
   def get_data
 
-    # preliminary 
-
-    # 40.728209, -73.953279
     params = {query: 'chinese', lt: 40.728209, lg: -73.953279}
     g = GooglePlacesWrapper.new(params).search
     y = YelpWrapper.new(params).yelp_search
@@ -12,19 +9,9 @@ class ApiWrapper
 
 
     generate_restaurants(g,f,y)
-    #Combine magic
-      #Take three hashes and .uniq them somehow
-      #Match them up by address
-      #if g.address == y.address && y.address == f.address
-        #it's one place
-      #end
-
-    #present data
   end
 
   def generate_restaurants(google,foursquare,yelp)
-    
-    #magic
 
     restaurants = {}
 
@@ -42,8 +29,6 @@ class ApiWrapper
 
           if (fyg || fy || yg || gf) 
 
-
-
             r = Restaurant.new
             r.name = fy ? foursquare_hash[:name] : google_hash[:name]
             r.address = fy ? yelp_hash[:address] : google_hash [:address]
@@ -51,15 +36,13 @@ class ApiWrapper
             r.foursquare_rating = foursquare_hash[:rating] if fy || gf
             r.google_rating = google_hash[:rating] if yg || gf
 
-            if r.name == "Friendly Gourmet Pizza"
-              # binding.pry
-            end
 
             if fy
               restaurants[yelp_hash[:key]] = r
             else
               restaurants[google_hash[:key]] = r
             end
+
           end
 
         end
@@ -68,7 +51,6 @@ class ApiWrapper
 
     end
 
-    #combine f-y google
 
     #console display - to be removed
     restaurants.each do |key, restaurant|
@@ -77,9 +59,8 @@ class ApiWrapper
 
     end
 
-    nil
     restaurants
-    #return [restaurant, restaurant2.....]
+
   end
 
 end
