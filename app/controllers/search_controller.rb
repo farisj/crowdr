@@ -2,12 +2,13 @@ class SearchController < ApplicationController
 
   def index
     @search = ApiWrapper.new
-    @restaurants = @search.get_data(search_params).values
+    # @restaurants = @search.get_data(search_params).values
   end
 
   def create
     @search = ApiWrapper.new
     @restaurants = @search.get_data(search_params).values
+    binding.pry
   end
 
 

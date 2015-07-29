@@ -21,8 +21,8 @@
         <div class="form-group">
           <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?')%></p>
         </div>
-        <% hidden_field_tag "lt" %> <!-- placeholder -->
-        <% hidden_field_tag "lg" %> <!-- placeholder -->
+        <%= hidden_field_tag "search[lt]" %> <!-- placeholder -->
+        <%= hidden_field_tag "search[lg]" %> <!-- placeholder -->
         <h2><%= submit_tag "GET SEARCHING"%></h2>
       <% end %>
     </div>
@@ -34,8 +34,10 @@
       <td>Google</td>
       <td>foursquare</td>
       <td>Yelp</td>
-      <%= @restaurants.each do |restaurant| %>
-        <tr><%= render "restaurant" %></tr>
+      <% if @restaurants %>
+        <%= @restaurants.each do |restaurant| %>
+          <tr><%= render "restaurant" %></tr>
+        <% end %>
       <% end %>
     </table>
 

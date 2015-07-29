@@ -1,8 +1,8 @@
 class ApiWrapper
 
-  def get_data
+  def get_data(params = {query: 'chinese', lt: 40.728209, lg: -73.953279})
 
-    params = {query: 'chinese', lt: 40.728209, lg: -73.953279}
+    
     g = GooglePlacesWrapper.new(params).search
     y = YelpWrapper.new(params).yelp_search
     f = FoursquareWrapper.new(params).index
@@ -51,6 +51,7 @@ class ApiWrapper
 
     end
 
+    puts "hi"
 
     #console display - to be removed
     restaurants.each do |key, restaurant|
