@@ -4,25 +4,23 @@ class GooglePlacesWrapper
 
   GOOGLE_API_KEY = ENV['google_places_api_key']
 
-  def initialize(params = {})
+  def initialize(params = {query: 'pizza', lt: 40.704628, lg: -74.014155})
     #stubbed out init for now
     #need to move the static search params from #search here
+    @query = params[:query]
+    @lat = params[:lt]
+    @lon = params[:lg]
   end
 
   def search
 
-      #arbitrary search parameters (for now)
-      query = 'pizza'
-
-      lat = 40.704628
-      lon = -74.014155
 
       radius = 1000 #in meters
 
       #Build API query (Multi-line for readability)
       url = "https://maps.googleapis.com/maps/api/place/textsearch/json?"
-      url += "query=#{query}&"
-      url += "location=#{lat},#{lon}&"
+      url += "query=#{@query}&"
+      url += "location=#{@lat},#{@lon}&"
       url += "radius=#{radius}&"
       url += "key=#{GOOGLE_API_KEY}"
 
@@ -32,20 +30,16 @@ class GooglePlacesWrapper
       results = JSON.parse(File.read("google_response"))
 
       #Format data
-      results["results"].map do |result|
-
-        if result["name"]=="Davinci"
-          # binding.pry
+      results["results"].map { |result|
+        if result["rating"]
+          {
+            key: format_key_address(result["formatted_address"].gsub(/,[^,]+$/,"")),
+            name: result["name"],
+            address: result["formatted_address"].gsub(/\s#.,+/,","),
+            rating: result["rating"]
+          }
         end
-
-        {
-          key: format_key_address(result["formatted_address"].gsub(/,[^,]+$/,"")),
-          name: result["name"],
-          address: result["formatted_address"].gsub(/\s#.,+/,","),
-          rating: result["rating"]
-        }
-
-      end
+      }.compact
     end
 
 end
