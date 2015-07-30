@@ -35,31 +35,34 @@ class ApiWrapper
             else
               restaurant_key = google_hash[:key]
             end
-            
-            #Create a new restaurant if it doesn't already exist
-            #Set the properties of the object in the hash from *within* the hash
-            #This fixes a bug where it would overwrite itself w/o all 3 values
-            #This fix definitely does do a lot of unnecessary overwriting and could be refactored.
-            restaurants[restaurant_key] ||= Restaurant.new
-            restaurants[restaurant_key].name = fy ? foursquare_hash[:name] : google_hash[:name]
-            restaurants[restaurant_key].address = fy ? yelp_hash[:address] : google_hash [:address]
-            restaurants[restaurant_key].yelp_rating = yelp_hash[:rating] if yg || fy
-            restaurants[restaurant_key].foursquare_rating = foursquare_hash[:rating] if fy || gf
-            restaurants[restaurant_key].google_rating = google_hash[:rating] if yg || gf
 
+
+            if restaurants[restaurant_key]
+
+              #Update restaurant
+              restaurants[restaurant_key].yelp_rating = yelp_hash[:rating] if yg || fy
+              restaurants[restaurant_key].foursquare_rating = foursquare_hash[:rating] if fy || gf
+              restaurants[restaurant_key].google_rating = google_hash[:rating] if yg || gf
+
+            else
+
+              #Create new Restaurant
+              r = Restaurant.new
+              r.name = fy ? foursquare_hash[:name] : google_hash[:name]
+              r.address = fy ? yelp_hash[:address] : google_hash [:address]
+              r.yelp_rating = yelp_hash[:rating] if yg || fy
+              r.foursquare_rating = foursquare_hash[:rating] if fy || gf
+              r.google_rating = google_hash[:rating] if yg || gf
+
+              restaurants[restaurant_key] = r
+
+            end
+            
           end
 
         end
    
       end
-
-    end
-
-
-    #console display - to be removed
-    restaurants.each do |key, restaurant|
-
-      # puts "#{restaurant.name} - #{restaurant.address} - #{restaurant.google_rating} - #{restaurant.foursquare_rating} - #{restaurant.yelp_rating}"
 
     end
 
