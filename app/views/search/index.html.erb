@@ -8,25 +8,29 @@
     <script src="assets/location_map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet"> -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <!--   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
   </head>
 
   <body onload="initialize()">
 
-    <div class="jumbotron">
+    <div class="col-md-12 jumbotron" style="box-shadow:none; background-color:" align="center">
+    <div class="col-md-8 col-md-offset-2">
       <h1>Attack Of The Reviews</h1>
-      <h3>More reviews than you can handle.</h3>
+      <h3>More reviews than you can handle.</h3><br>
+    </div>
       <%= form_tag '/search' do |f| %>
-        <div class="form-group">
-          <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?', class: "form-control col-lg-8")%></p>
+      <div class="col-md-10 col-md-offset-2">
+        <div class="form-group col-md-5" style="padding-top:12px;">
+          <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?', class: "form-control")%></p>
         </div>
         <%= hidden_field_tag "search[lt]" %> <!-- placeholder -->
         <%= hidden_field_tag "search[lg]" %> <!-- placeholder -->
-        <h2><%= submit_tag "GET SEARCHING", class: "btn btn-flat btn-primary" %></h2>
-      <% end %>
+        <h2 class="col-md-4" style="margin-top:0px;"><%= submit_tag "GET SEARCHING", class: "btn btn-flat btn-primary" %></h2>
+        <% end %>
+      </div>
     </div>
     
     <%= render "map" %>
@@ -40,7 +44,7 @@
     </table>
     </div>
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
   </body>
 
 </html>

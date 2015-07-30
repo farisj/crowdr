@@ -6,7 +6,7 @@ function initialize() {
     map = new Map(latitude, longitude);
     map.insertHiddens(latitude,longitude);
   });
-};
+}
 
 function Map(latitude, longitude) {
   var myLatLng = new google.maps.LatLng(latitude, longitude);
@@ -30,7 +30,7 @@ function Map(latitude, longitude) {
       });
   google.maps.event.trigger(marker, 'click');
   google.maps.event.addListener(marker, 'dragend', this.bounce);
-};
+}
 
 Map.prototype.bounce = function() {
   marker.setAnimation(google.maps.Animation.BOUNCE);
