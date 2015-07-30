@@ -1,3 +1,20 @@
+$(function(){
+  $("form").submit(function(){
+    event.preventDefault();
+
+    var action = $(this).attr('action');
+        method = $(this).attr('method'),
+        data = $(this).serializeArray();
+   
+    $.ajax({
+        method: method,
+        url: action,
+        data: data,
+        dataType: 'script'
+      });
+  });
+});
+
 function initialize() {
   navigator.geolocation.getCurrentPosition(function(position) {
     var latitude = position.coords.latitude.toFixed(2);
@@ -45,3 +62,21 @@ Map.prototype.insertHiddens = function(latitude, longitude) {
 Map.prototype.changeCoords = function(newLatLng) {
   map.insertHiddens(newLatLng.lat(), newLatLng.lng());
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
