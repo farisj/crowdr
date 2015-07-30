@@ -1,5 +1,18 @@
+
 <td><%= restaurant.name %></td> 
-<td><%= restaurant.google_rating %></td> 
+<div class="row">
+  <div class="col-xs-12 col-md-4 full-card">
+    <div class="flip-card active-card">
+      <div class="card label-info">
+        <h6>Google says...</h6>
+      </div>
+      <div class="well">
+        <h1><td><%= restaurant.google_rating %></td> </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
 <td><%= restaurant.foursquare_rating %></td>
 <td><%= restaurant.yelp_rating %></td>
 <td><%= (restaurant.google_rating.to_f*2 + restaurant.foursquare_rating.to_f + restaurant.yelp_rating.to_f*2)/((restaurant.google_rating.to_i/restaurant.google_rating.to_i if restaurant.google_rating.to_i > 0).to_i + (restaurant.foursquare_rating.to_i/restaurant.foursquare_rating.to_i if restaurant.foursquare_rating.to_i > 0).to_i + (restaurant.yelp_rating.to_i/restaurant.yelp_rating.to_i if restaurant.yelp_rating.to_i > 0).to_i)*10
