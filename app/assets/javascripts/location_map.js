@@ -29,10 +29,10 @@ function Map(latitude, longitude) {
         map.changeCoords(newLatLng);
       });
   google.maps.event.trigger(marker, 'click');
-  google.maps.event.addListener(marker, 'dragend', this.toggleBounce);
+  google.maps.event.addListener(marker, 'dragend', this.bounce);
 };
 
-Map.prototype.toggleBounce = function() {
+Map.prototype.bounce = function() {
   marker.setAnimation(google.maps.Animation.BOUNCE);
   setTimeout(function(){ marker.setAnimation(null); }, 500);
 };
