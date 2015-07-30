@@ -1,10 +1,52 @@
-<td><%= restaurant.name %></td> 
-<td><%= restaurant.google_rating %></td> 
-<td><%= restaurant.foursquare_rating %></td>
-<td><%= restaurant.yelp_rating %></td>
-<td><%= (restaurant.google_rating.to_f*2 + restaurant.foursquare_rating.to_f + restaurant.yelp_rating.to_f*2)/((restaurant.google_rating.to_i/restaurant.google_rating.to_i if restaurant.google_rating.to_i > 0).to_i + (restaurant.foursquare_rating.to_i/restaurant.foursquare_rating.to_i if restaurant.foursquare_rating.to_i > 0).to_i + (restaurant.yelp_rating.to_i/restaurant.yelp_rating.to_i if restaurant.yelp_rating.to_i > 0).to_i)*10
-%>%</td>
 
+<div class="row" id="example-row" align="center">
+
+  <!-- Note the "full-card" class which stands for only one card. Add multiple "full-card" for more cards.  -->
+  <div class="col-xs-12 col-md-9 full-card">
+  <h1> <%= restaurant.name %> </h1>
+    <!-- This will be the card that is active. Note that there should only be one card active. -->
+    <div class="flip-card active-card col-md-4">
+      <div class="">
+      <div class="card label-info" style="color: white;">
+        <!-- The <h6> can also be a <img> which will be centered. -->
+        <h7><%= restaurant.google_rating %> </h7>
+      </div>
+
+      <div class="well">
+        <h5>Google</h5>
+      
+      </div>
+      </div>
+    </div>
+    <div class="flip-card active-card col-md-4">
+      <div class="card" style="background-color: #F1BF26;color: white;">
+        <h7><%= restaurant.yelp_rating %></h7>
+      </div>
+      <div class="well">
+        <h5>Yelp</h5>
+      </div>
+    </div>
+    <div class="flip-card active-card col-md-4">
+      <div class="card alert-success" style="background-color: #199643;color: white;">
+        <h7><%= restaurant.foursquare_rating %></h7>
+      </div>
+      <div class="well">
+        <h5>Foursquare</h5>
+      </div>
+    </div>
+    <div class="flip-card active-card col-md-12">
+      <div class="card alert-success plz-no-dropshadow" style="background-color: white;color: #FF5930; box-shadow:none;">
+        <h7 class="col-md-6"><%= restaurant.average_rating %></h7><br>
+        <h3 class="col-md-6">Average</h3>
+      </div>
+      
+    </div>
+<!--       <div class="average-text col-md-4">
+        
+      </div> -->
+
+  </div>
+</div>
 
 
 
