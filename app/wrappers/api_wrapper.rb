@@ -79,5 +79,5 @@ class ApiWrapper
     restaurants
 
   end
-
 end
+

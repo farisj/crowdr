@@ -2,13 +2,18 @@ class SearchController < ApplicationController
 
   def index
     @search = ApiWrapper.new
-    # @restaurants = @search.get_data(search_params).values
   end
 
   def create
     @search = ApiWrapper.new
     @restaurants = @search.get_data(search_params).values
-    render :index
+
+    respond_to do |format|
+      format.html { render :index }
+
+      format.js { }
+    end
+
   end
 
   private

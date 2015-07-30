@@ -45,3 +45,21 @@ Map.prototype.insertHiddens = function(latitude, longitude) {
 Map.prototype.changeCoords = function(newLatLng) {
   map.insertHiddens(newLatLng.lat(), newLatLng.lng());
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
