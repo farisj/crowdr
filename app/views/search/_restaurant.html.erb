@@ -1,5 +1,11 @@
 <td><%= restaurant.name %></td> 
-<td>Google: <%= restaurant.google_rating %></td> 
-<td>Foursquare: <%= restaurant.foursquare_rating %></td>
-<td>Yelp: <%= restaurant.yelp_rating %></td>
-<td>Average: </td>
+<td><%= restaurant.google_rating %></td> 
+<td><%= restaurant.foursquare_rating %></td>
+<td><%= restaurant.yelp_rating %></td>
+<td><%= (restaurant.google_rating.to_f*2 + restaurant.foursquare_rating.to_f + restaurant.yelp_rating.to_f*2)/((restaurant.google_rating.to_i/restaurant.google_rating.to_i if restaurant.google_rating.to_i > 0).to_i + (restaurant.foursquare_rating.to_i/restaurant.foursquare_rating.to_i if restaurant.foursquare_rating.to_i > 0).to_i + (restaurant.yelp_rating.to_i/restaurant.yelp_rating.to_i if restaurant.yelp_rating.to_i > 0).to_i)*10
+%>%</td>
+
+
+
+
+
