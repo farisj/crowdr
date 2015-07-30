@@ -29,16 +29,13 @@ function Map(latitude, longitude) {
         map.changeCoords(newLatLng);
       });
   google.maps.event.trigger(marker, 'click');
-  // google.maps.event.addListener(marker, 'click', toggleBounce);
+  google.maps.event.addListener(marker, 'dragend', this.toggleBounce);
 };
 
-// Map.prototype.toggleBounce = function() {
-//   if (marker.getAnimation() != null) {
-//     marker.setAnimation(null);
-//   } else {
-//     marker.setAnimation(google.maps.Animation.BOUNCE);
-//   }
-// };
+Map.prototype.toggleBounce = function() {
+  marker.setAnimation(google.maps.Animation.BOUNCE);
+  setTimeout(function(){ marker.setAnimation(null); }, 500);
+};
 
 Map.prototype.insertHiddens = function(latitude, longitude) {
   $('#search_lt').val(latitude);
