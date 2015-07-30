@@ -2,7 +2,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Eatablifyeratorly</title>
+    <title>Crowdr</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="assets/location_map.js"></script>
@@ -30,19 +30,15 @@
     </div>
     
     <%= render "map" %>
-
+    <div class="col-md-6 scroll-flow">
     <table style="width:50%; float:right;" align="right">
-      <td>Restaurant</td>
-      <td>Google</td>
-      <td>foursquare</td>
-      <td>Yelp</td>
-      <td>Crowd</td>
       <% if @restaurants %>
         <% @restaurants.each do |restaurant| %>
           <tr><%= render partial: "restaurant" , locals: {restaurant: restaurant} %></tr>
         <% end %>
       <% end %>
     </table>
+    </div>
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
