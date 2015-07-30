@@ -30,14 +30,13 @@ class YelpWrapper
       radius_filter: 1000,
       category_filter: 'restaurants'
     }
-    @yelp_results = {}
     #This line below is in case we decide to go back to searching by zip.
     #client.search(zipcode, params, { lang: 'en' }).businesses.collect do |business|
     coordinates = {latitude: @lt, longitude: @lg}
     #Search yelp and return hash of restaurant values.
     yelp_client.search_by_coordinates(coordinates, params, { lang: 'en' }).businesses.collect { |business|
       if business.rating
-        @yelp_results= {
+        {
 
           key: format_key_address("#{business.location.display_address.first}, #{business.location.display_address.last}"),
           name: business.name, 
