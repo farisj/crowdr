@@ -10,9 +10,25 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree ../../../vendor/assets/stylesheets/.
+ *= require material-fullpalette
+ *= require material-fullpalette
+ *= require material-fullpalette
+ *= require material-fullpalette
+ *= require material
+ *= require material
+ *= require material
+ *= require material
+ *= require ripples
+ *= require ripples
+ *= require ripples
+ *= require ripples
+ *= require roboto
+ *= require roboto
+ *= require roboto
+ *= require roboto
  *= require_tree .
  *= require_self
+ *=
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
  //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"

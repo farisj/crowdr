@@ -13,5 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require_tree ../../../vendor/assets/javascripts/.
+//= require material.js
+//= require material.js
+//= require material.js
+//= require ripples.js
+//= require ripples.js
+//= require ripples.js
 //= require_tree .
