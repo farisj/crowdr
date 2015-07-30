@@ -24,9 +24,9 @@
       <%= form_tag '/search', remote: true do |f| %>
         <div class="form-group">
           <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?', class: "form-control col-lg-8")%></p>
-          <%= hidden_field_tag "search[lt]" %> <!-- placeholder -->
-          <%= hidden_field_tag "search[lg]" %> <!-- placeholder -->
-          <h2><%= submit_tag "GET SEARCHING", class: "btn btn-flat btn-primary" %></h2>
+          <%= hidden_field_tag "search[lt]" %> 
+          <%= hidden_field_tag "search[lg]" %> 
+          <h2><%= submit_tag "GET SEARCHING", class: "btn btn-flat btn-primary", id: "button" %></h2>
         </div>
       <% end %>
     </div>

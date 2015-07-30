@@ -83,3 +83,25 @@ body {
  text-align: center;
  margin-bottom: 5px;
 }
+
+.explode {
+  margin-right: auto;
+  margin-left: 40%;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background-image: url('http://i.imgur.com/uwuRLCV.png?1');
+  background-repeat: no-repeat;
+  background-position: 64px 0;
+  transform: scale(10);
+}
+
+.explode_ignite {
+  animation: ignite 0.5s steps(25) 0s 1 normal forwards running;
+}
+
+
+@keyframes ignite {
+  from { background-position: 0 0; }
+  to { background-position: -1600px 0; }
+}
