@@ -34,6 +34,7 @@
       <td>Google</td>
       <td>foursquare</td>
       <td>Yelp</td>
+      <td>Crowd</td>
       <% if @restaurants %>
         <% @restaurants.each do |restaurant| %>
           <tr><%= render partial: "restaurant" , locals: {restaurant: restaurant} %></tr>
