@@ -70,7 +70,7 @@ h7 {
 }
 
 .scroll-flow {
-  height: 600px;
+  height: 680px;
   overflow: scroll;
 }
 
@@ -108,29 +108,4 @@ h7 {
     float: right;
     margin-top: -28px;
     margin-right: 14px;
-}
-
-
-/*////////////EXPLOSIONSSSSS//////////////////////
-
-.explode {
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin-top: -32px;
-  margin-left: -32px;
-  background-image: url('http://i.imgur.com/uwuRLCV.png?1');
-  background-repeat: no-repeat;
-  background-position: 64px 0;
-  transform: scale(2);
-}
-
-.explode_ignite {
-  animation: ignite 0.5s steps(25) 0s 1 normal forwards running;
-}
-
-
-@keyframes ignite {
-  from { background-position: 0 0; }
-  to { background-position: -1600px 0; }
 }
