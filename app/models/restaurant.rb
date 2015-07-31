@@ -1,6 +1,6 @@
 class Restaurant
 
-  attr_accessor :key, :name, :address, :google_rating, :yelp_rating, :foursquare_rating
+  attr_accessor :key, :name, :address, :google_rating, :yelp_rating, :foursquare_rating, :phone
 
   #Object to contain pertinent data to be used later in controller
   #ApiWrapper will create many of these objects

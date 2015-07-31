@@ -41,6 +41,7 @@ class YelpWrapper
           key: format_key_address("#{business.location.display_address.first}, #{business.location.display_address.last}"),
           name: business.name, 
           rating: business.rating,
+          phone: business.display_phone,
           address: "#{business.location.display_address.first}, #{business.location.display_address.last}"#.gsub(/\s#.+/,"")
         }
       end
