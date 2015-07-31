@@ -1,5 +1,8 @@
-<% if restaurants %>
+<% if restaurants.length > 1 %>
   <%restaurants.each do |restaurant| %>
     <%= render partial: "restaurant", locals: {restaurant: restaurant} %>
   <% end %>
+<% else %>
+  <h2> Sorry, your search returned no results. </h2>
+<h2 style="cursor:pointer;"> <a id="clickToSearch">Try again?</a></h2>
 <% end %>
