@@ -9,7 +9,7 @@
       <div class="">
       <div class="card label-info" style="color: white;">
         <!-- The <h6> can also be a <img> which will be centered. -->
-        <div style="padding:15px;"><h7><%= restaurant.google_rating || "x" %> </h7></div>
+        <div style="padding:15px;"><h7><%= restaurant.google_rating || "x" %> </h7></div> <div class="make-the-fives-less-sucky denominator col-md-1 col-md-offset-9">/5</div>
       </div>
 
       <div class="well">
@@ -20,7 +20,7 @@
     </div>
     <div class="flip-card active-card col-md-4">
       <div class="card" style="background-color: #F1BF26;color: white;">
-        <div style="padding:15px;"><h7><%= restaurant.yelp_rating || "n/a" %></h7></div>
+        <div style="padding:15px;"><h7><%= restaurant.yelp_rating || "n/a" %></h7></div><div class="make-the-fives-less-sucky denominator col-md-1 col-md-offset-9">/5</div>
       </div>
       <div class="well">
         <h5>Yelp</h5>
@@ -28,7 +28,7 @@
     </div>
     <div class="flip-card active-card col-md-4">
       <div class="card alert-success" style="background-color: #199643;color: white;">
-        <div style="padding:15px;"><h7><%= restaurant.foursquare_rating || "x" %></h7></div>
+        <div style="padding:15px;"><h7><%= restaurant.foursquare_rating || "x" %></h7></div><div class="denominator col-md-1 col-md-offset-8 make-the-ten-less-sucky">/10</div>
       </div>
       <div class="well">
         <h5>Foursquare</h5>
