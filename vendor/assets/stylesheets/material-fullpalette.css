@@ -35477,8 +35477,8 @@ fieldset[disabled] .form-control:focus:disabled,
 .form-control:focus:disabled,
 fieldset[disabled] .form-control.focus:disabled,
 .form-control.focus:disabled {
-  border-style: dashed;
-  border-bottom: 1px solid #757575;
+  /*border-style: dashed;
+  border-bottom: 1px solid #757575;*/
 }
 fieldset[disabled] .form-control:textarea,
 .form-control:textarea {
