@@ -59,7 +59,7 @@ div.flip-out {
 }
 
 h7 {
-  font-size: 4em;
+  font-size: 3.75em;
   font-weight: 500;
 }
 
@@ -67,10 +67,6 @@ h7 {
   height:100px;
   /*border:1px solid;*/
   padding: 10px;
-}
-
-.full-card >.flip-card > .plz-no-drop-shadow{
-  box-shadow: none;
 }
 
 .scroll-flow {

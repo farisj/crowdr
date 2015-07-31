@@ -22,13 +22,13 @@
       <h3>More reviews than you can handle.</h3><br>
     </div>
       <%= form_tag '/search' do |f| %>
-      <div class="col-md-10 col-md-offset-2">
-        <div class="form-group col-md-5" style="padding-top:12px;">
+      <div class="col-md-7 col-md-offset-3">
+        <div class="form-group col-md-7" style="padding-top:12px;">
           <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?', class: "form-control")%></p>
         </div>
         <%= hidden_field_tag "search[lt]" %> <!-- placeholder -->
         <%= hidden_field_tag "search[lg]" %> <!-- placeholder -->
-        <h2 class="col-md-4" style="margin-top:0px;"><%= submit_tag "GET SEARCHING", class: "btn btn-flat btn-primary" %></h2>
+        <h2 class="col-md-3" style="margin-top:0px;"><%= submit_tag "GET SEARCHING", class: "btn btn-flat btn-primary" %></h2>
         <% end %>
       </div>
     </div>
