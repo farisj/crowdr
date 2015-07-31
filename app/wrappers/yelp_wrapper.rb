@@ -42,6 +42,7 @@ class YelpWrapper
           name: business.name, 
           rating: business.rating,
           phone: business.display_phone,
+          snippet_text: business.snippet_text,
           address: "#{business.location.display_address.first}, #{business.location.display_address.last}"#.gsub(/\s#.+/,"")
         }
       end
