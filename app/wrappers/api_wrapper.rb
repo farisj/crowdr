@@ -63,7 +63,7 @@ class ApiWrapper
               r.foursquare_rating = foursquare_hash[:rating] if fy || gf
               r.google_rating = google_hash[:rating] if yg || gf
               r.phone = yelp_hash[:phone] 
-
+              r.snippet_text = yelp_hash[:snippet_text]
               restaurants[restaurant_key] = r
 
 
