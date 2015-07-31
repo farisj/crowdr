@@ -22,7 +22,8 @@ function Map(latitude, longitude) {
         map: map,
         animation: google.maps.Animation.DROP,
         draggable: true
-      }); 
+      });
+       
 
   google.maps.event.addListener(marker, 'dragend', function(){
         var newLatLng = marker.getPosition();
