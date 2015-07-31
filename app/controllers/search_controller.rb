@@ -6,7 +6,7 @@ class SearchController < ApplicationController
 
   def create
     @search = ApiWrapper.new
-    @restaurants = @search.get_data(search_params).values
+    @restaurants = @search.get_data(search_params).values.sort_by{|restaurant| restaurant.average_rating}.reverse
 
     respond_to do |format|
       format.html { render :index }
