@@ -3,13 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .make-the-ten-less-sucky {
-  left: 3px;
+  right: 6px;
 }
 
 .make-the-fives-less-sucky {
-  right: 3px;
+  right: 8px;
 }
 
 .denominator {
-  bottom:5px;
+  bottom: 5px;
+}
+
+#example-row > div > p:nth-child(2) {
+  font-size: 16px;
 }
