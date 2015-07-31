@@ -29,6 +29,7 @@
 /* Some Style from the Bootstrap Default Theme */
 body {
   padding-bottom: 30px;
+  background-color: #FEFDFE;
 }
 
 .theme-dropdown .dropdown-menu {
@@ -42,13 +43,11 @@ body {
 }
 
 .location {
- background-color: #EEE;
  border-radius: 5px;
 }
 
 .loc {
  display: inline-block;
- background-color: white;
  border-radius: 5px;
  margin: 10px;
  width: 330px;
@@ -66,7 +65,7 @@ body {
 #map-canvas {
  width: 700px;
  height: 600px;
- background-color: #EEE;
+ background-color: #FEFDFE;
  border-radius: 5px;
 }
 

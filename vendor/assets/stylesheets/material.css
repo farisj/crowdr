@@ -2553,7 +2553,7 @@ Then, run this script to get the list.
   content: "\e8f5";
 }
 body {
-  background-color: #eeeeee;
+  background-color: #FEFDFE;
 }
 body.inverse {
   background: #333333;
@@ -2610,7 +2610,7 @@ body .well,
 body .jumbotron,
 .container .jumbotron,
 .container-fluid .jumbotron {
-  background-color: #fff;
+  background-color: #FEFDFE;
   padding: 19px;
   margin-bottom: 20px;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -2637,7 +2637,7 @@ body .well-default,
 body .jumbotron-default,
 .container .jumbotron-default,
 .container-fluid .jumbotron-default {
-  background-color: #ffffff;
+  background-color: #FEFDFE;
 }
 body .well-black,
 .container .well-black,
