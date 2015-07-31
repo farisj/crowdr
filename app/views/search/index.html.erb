@@ -9,6 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="assets/location_map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
@@ -17,11 +18,11 @@
 
     <div class="col-md-12 jumbotron" style="box-shadow:none; background-color:" align="center">
     <div class="col-md-8 col-md-offset-2">
-      <h1>Attack Of The Reviews</h1>
+      <h1>Attack of the Reviews</h1>
       <h3>More reviews than you can handle.</h3><br>
     </div>
       <%= form_tag '/search', remote: true do |f| %>
-      <div class="col-md-7 col-md-offset-3">
+      <div class="col-md-7 col-md-offset-3 stickit">
         <div class="form-group col-md-7" style="padding-top:12px;">
           <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?', class: "form-control")%></p>
         </div>
@@ -35,7 +36,7 @@
 
     <div class="col-md-6 scroll-flow" id="results">
     </div>
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <footer></footer>
   </body>
 
 </html>
