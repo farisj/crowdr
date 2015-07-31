@@ -18,10 +18,9 @@
     <div class="col-md-12 jumbotron" style="box-shadow:none; background-color:" align="center">
     <div class="col-md-8 col-md-offset-2">
       <h1>Attack Of The Reviews</h1>
-<<<<<<< HEAD
       <h3>More reviews than you can handle.</h3><br>
     </div>
-      <%= form_tag '/search' remote: true do |f| %>
+      <%= form_tag '/search', remote: true do |f| %>
       <div class="col-md-7 col-md-offset-3">
         <div class="form-group col-md-7" style="padding-top:12px;">
           <p><%= text_field_tag('search[query]', nil, placeholder: '  what do you crave?', class: "form-control")%></p>
